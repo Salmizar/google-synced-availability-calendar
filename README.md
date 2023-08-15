@@ -6,16 +6,20 @@ Some friends run a guiding business and are looking for a simple availability ca
 
 ![alt text](https://raw.githubusercontent.com/Salmizar/availability-calendar/main/UI-datastuctures-requirements/Availability%20Calendar.png)
 
+## Demo
+
+http://availability-calendar.s3-website.us-east-2.amazonaws.com
+
 ### Deploy to AWS
 ```
 aws s3 sync ./dist s3://availability-calendar
 ```
 
-## Demo
+## Built with:
 
-http://availability-calendar.s3-website.us-east-2.amazonaws.com
+Vanilla JS,CSS,HTML
 
-## Built with Vanilla JS,CSS,HTML
+## Run Locally
 
 ```bash
 npm start
