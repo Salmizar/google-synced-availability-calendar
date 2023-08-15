@@ -1,0 +1,23 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "description": "Simple availability Calendar",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Salmizar/availability-calendar.git"
+  },
+  "author": "Salmizar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Salmizar/availability-calendar/issues"
+  },
+  "homepage": "https://github.com/Salmizar/availability-calendar#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

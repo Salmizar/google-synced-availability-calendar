@@ -1,0 +1,24 @@
+.calendar {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.header {
+    background-color: #ccccccff;
+    box-shadow: 3 3 3 #000;
+    border:1px solid #000;
+}
+.day {
+    color: #000;
+    border: 1px solid #666666;
+}
+.calendar table {
+    color: #FFF;
+    width: 100%;
+    border-collapse: collapse;
+    height: 100%;
+}
+td {
+    width: calc( 100% / 7);
+    text-align: center;
+}
