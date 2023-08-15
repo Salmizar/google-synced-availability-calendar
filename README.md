@@ -20,17 +20,17 @@ npm start
 
 ## Usage Instructions
 
-<html>
-<head>
-    <script type="module">
-        import { setupCalendar, setupLegend, renderThemeEvents } from './cal/calendar.js';
-        setupCalendar({ theme: 1, file: 'data.js', id: 'calendar', themeId: 'themes' });
-        setupLegend({ id: 'legend' });
-    </script>
-</head>
-<body>
-    <div id="calendar" style="width: 330px; height: 370px;"></div>
-    <div id="legend"></div>
-    <div id="themes"></div>
-</body>
-</html>
+    <html>
+    <head>
+        <script type="module">
+            import { setupCalendar, setupLegend, renderThemeEvents } from './cal/calendar.js';
+            setupCalendar({ theme: 1, file: 'data.js', id: 'calendar', themeId: 'themes' });
+            setupLegend({ id: 'legend' });
+        </script>
+    </head>
+    <body>
+        <div id="calendar" style="width: 330px; height: 370px;"></div>
+        <div id="legend"></div>
+        <div id="themes"></div>
+    </body>
+    </html>
