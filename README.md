@@ -2,7 +2,7 @@
 
 Some friends run a guiding business and are looking for a simple availability calendar, so I decided to make one for them.
 
-##Screenshot
+## Screenshot
 
 ![alt text](https://raw.githubusercontent.com/Salmizar/availability-calendar/main/UI-datastuctures-requirements/Availability%20Calendar.png)
 
