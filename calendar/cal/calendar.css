@@ -65,6 +65,7 @@
     width: 100%;
     border-collapse: collapse;
     height: 100%;
+    cursor: default;
 }
 
 .calendar td {

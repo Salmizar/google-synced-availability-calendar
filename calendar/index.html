@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,12 @@
     <title>Calendar Example</title>
     <script type="module">
         import { setupCalendar, setupLegend, renderThemeEvents } from './cal/calendar.js';
-        setupCalendar({ theme: 1, file: 'data.js', id: 'calendar', themeId: 'themes' });
-        setupLegend({ id: 'legend' });
+        function renderCalendar(theme) {
+            setupCalendar({ theme: theme, file: 'data.js', id: 'calendar', themeId: 'themes' });
+            setupLegend({ id: 'legend' });
+        }
+        renderCalendar(1);
+        window.renderCalendar = renderCalendar;
     </script>
     <style>
         body {
@@ -19,16 +24,31 @@
         h1 {
             text-align: center;
         }
-        #calendar, #legend, #themes {
-            float:left;
+        #calendar,
+        #legend,
+        #themes {
+            float: left;
             padding: 10px;
         }
     </style>
 </head>
+
 <body>
     <h1>Calendar</h1>
-        <div id="calendar" style="width: 330px; height: 370px;"></div>
-        <div id="legend"></div>
-        <div id="themes"></div>
+    <div id="theme-selector">
+        <button disabled id="theme1" onclick="changeTheme(1)">Theme 1</button>
+        <button  id="theme2" onclick="changeTheme(2)">Theme 2</button>
+    </div>
+    <div id="calendar" style="width: 330px; height: 370px;"></div>
+    <div id="legend"></div>
+    <div id="themes"></div>
 </body>
+<script>
+    function changeTheme(id) {
+        window.renderCalendar(id);
+        document.getElementById("theme1").disabled = (id===1);
+        document.getElementById("theme2").disabled = (id===2);
+    }
+</script>
+
 </html>

@@ -12,9 +12,11 @@ const legend = [
 ];
 var calDate = new Date();
 function setupLegend(config) {
+    let container = document.getElementById(config.id);
+    container.innerHTML = '';
     if (theme === 1) {
         let tbl = document.createElement('table');
-        document.getElementById(config.id).appendChild(tbl);
+        container.appendChild(tbl);
         legend.map((item, index) => {
             let row = tbl.insertRow(index);
             let col = row.insertCell(0);
@@ -27,9 +29,11 @@ function setupLegend(config) {
     }
 }
 function renderThemeEvents(config) {
+    let container = document.getElementById(config.themeId);
+    container.innerHTML = '';
     if (data) {
         let tbl = document.createElement('table');
-        document.getElementById(config.themeId).appendChild(tbl);
+        container.appendChild(tbl);
         data.themeDates.map((event, index) => {
             let row = tbl.insertRow(index);
             let col = row.insertCell(0);
@@ -52,16 +56,23 @@ function setupCalendar(config) {
     link.type = 'text/css';
     link.href = './cal/calendar.css';
     document.head.appendChild(link);
-    //Load config file
-    var script = document.createElement('script');
-    script.onload = function () {
+    if (typeof data === "undefined") {
+        //Load config file
+        var script = document.createElement('script');
+        script.onload = function () {
+            renderCalendar();
+            if (config.themeId) {
+                renderThemeEvents(config);
+            }
+        };
+        script.src = config.file;
+        document.head.appendChild(script);
+    } else {
         renderCalendar();
         if (config.themeId) {
             renderThemeEvents(config);
         }
-    };
-    script.src = config.file;
-    document.head.appendChild(script);
+    }
 }
 function changeMonth(e) {
     calDate.setMonth(calDate.getMonth() + ((e.currentTarget.id === 'next') ? 1 : -1));
@@ -152,9 +163,11 @@ function renderCalendar() {
             if (slotsAvailable != undefined) {
                 if (theme === 1) {
                     col.style = 'background-color: ' + getSlotColor(slotsAvailable);
+                    col.title = slotsAvailable+' spots available';
                 } else {
                     div = document.createElement('div');
                     div.className = 'highlight';
+                    div.title = slotsAvailable+' spots available';
                     div.innerText = slotsAvailable;
                     col.appendChild(div);
                 }
