@@ -6,10 +6,10 @@ Display one month at a time.
 Display each days date.
 display daily slots available numerically or using a visual legend.
 Theme colors.
-Configurable start day of the week.
 pagination +/- months.
 
 Nice to have:
 
 Ability to theme a date range (color and name).
 Editor for config file.
+Configurable start day of the week.

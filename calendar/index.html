@@ -6,12 +6,29 @@
     <link rel="icon" href="favicon.ico">
     <title>Calendar Example</title>
     <script type="module">
-        import { setupCalendar } from './cal/calendar.js';
-        setupCalendar({ file: 'data.js', id: 'calendar' });
+        import { setupCalendar, setupLegend, renderThemeEvents } from './cal/calendar.js';
+        setupCalendar({ theme: 1, file: 'data.js', id: 'calendar', themeId: 'themes' });
+        setupLegend({ id: 'legend' });
     </script>
+    <style>
+        body {
+            font-family: Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1 {
+            text-align: center;
+        }
+        #calendar, #legend, #themes {
+            float:left;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    Calendar
-    <div id="calendar" style="width: 400px; height: 300px;"></div>
+    <h1>Calendar</h1>
+        <div id="calendar" style="width: 330px; height: 370px;"></div>
+        <div id="legend"></div>
+        <div id="themes"></div>
 </body>
 </html>
