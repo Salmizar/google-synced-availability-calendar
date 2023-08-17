@@ -27,17 +27,17 @@ npm start
 
 ## Usage Instructions
 
-    <html>
-    <head>
-        <script type="module">
-            import { setupCalendar, setupLegend, renderThemeEvents } from './cal/calendar.js';
-            setupCalendar({ theme: 1, file: 'data.js', id: 'calendar', themeId: 'themes' });
-            setupLegend({ id: 'legend' });
-        </script>
-    </head>
-    <body>
-        <div id="calendar" style="width: 330px; height: 370px;"></div>
-        <div id="legend"></div>
-        <div id="themes"></div>
-    </body>
-    </html>
+#### Implementation example
+
+[index.html](https://github.com/Salmizar/availability-calendar/blob/main/calendar/public/index.html)
+
+Parameters:
+
+    id: 'id of the container, calendar will be rendered within' (required)
+    file: 'data.js' (required, format below)
+    theme: 1 or 2 (optional)
+    themeId: 'id of the container, theme events will be rendered within' (optional)
+ 
+#### Event data format
+
+[data.js](https://github.com/Salmizar/availability-calendar/blob/main/calendar/src/data.js)
