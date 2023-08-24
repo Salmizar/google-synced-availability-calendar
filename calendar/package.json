@@ -2,11 +2,12 @@
   "name": "calendar",
   "version": "1.0.0",
   "description": "Simple availability Calendar",
-  "main": "index.html",
+  "main": "fdfvdf.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server",
-    "build": "del \"dist\" /q && xcopy \"src\" \"dist\" /y /s && xcopy \"public\" \"dist\" /y /s"
+    "start": "http-server \"dist\" -o -c-1",
+    "build": "npx webpack",
+    "build-old": "del \"dist\" /q && xcopy \"src\" \"dist\" /y /s && xcopy \"public\" \"dist\" /y /s"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,11 @@
   },
   "homepage": "https://github.com/Salmizar/availability-calendar#readme",
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "copy-webpack-plugin": "^11.0.0",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "http-server": "^14.1.1",
+    "lodash": "^4.17.21",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }

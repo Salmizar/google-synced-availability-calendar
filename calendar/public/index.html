@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico">
     <title>Calendar Example</title>
+    <script src="cal/calendar.js"></script>
     <script type="module">
-        import { setupCalendar, setupLegend, renderThemeEvents } from './cal/calendar.js';
         function renderCalendar(theme) {
-            setupCalendar({ theme: theme, file: 'data.js', id: 'calendar', themeId: 'themes' });
-            setupLegend({ id: 'legend' });
+            calendar.setupCalendar({ theme: theme, file: 'data.js', id: 'calendar', themeId: 'themes' });
+            calendar.setupLegend({ id: 'legend' });
         }
         renderCalendar(1);
         window.renderCalendar = renderCalendar;
@@ -21,9 +21,11 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+
         h1 {
             text-align: center;
         }
+
         #calendar,
         #legend,
         #themes {
@@ -37,7 +39,7 @@
     <h1>Availability Calendar</h1>
     <div id="theme-selector">
         <button disabled id="theme1" onclick="changeTheme(1)">Theme 1</button>
-        <button  id="theme2" onclick="changeTheme(2)">Theme 2</button>
+        <button id="theme2" onclick="changeTheme(2)">Theme 2</button>
     </div>
     <div id="calendar" style="width: 330px; height: 370px;"></div>
     <div id="legend"></div>
@@ -46,8 +48,8 @@
 <script>
     function changeTheme(id) {
         window.renderCalendar(id);
-        document.getElementById("theme1").disabled = (id===1);
-        document.getElementById("theme2").disabled = (id===2);
+        document.getElementById("theme1").disabled = (id === 1);
+        document.getElementById("theme2").disabled = (id === 2);
     }
 </script>
 

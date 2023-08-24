@@ -4,7 +4,7 @@ Some friends run a guiding business and are looking for a simple availability ca
 
 ## Screenshot
 
-![alt text](https://raw.githubusercontent.com/Salmizar/availability-calendar/main/UI-datastuctures-requirements/Availability%20Calendar.png)
+![UI/UX Design](https://raw.githubusercontent.com/Salmizar/availability-calendar/main/UI-datastuctures-requirements/Availability%20Calendar.png)
 
 ## Demo
 
@@ -19,9 +19,17 @@ aws s3 sync ./dist s3://availability-calendar
 
 Vanilla JS,CSS,HTML
 
+## WebPack build and minify
+
+```bash
+npx webpack
+```
+
 ## Run Locally
 
 ```bash
+
+npm run build
 npm start
 ```
 
