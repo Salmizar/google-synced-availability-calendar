@@ -2,6 +2,8 @@
 
 Some friends run a guiding business and are looking for a simple availability calendar, so I decided to make one for them.
 
+Themes are custom events ocurring during a given period of time. Opening Weekend, for example.
+
 ## Screenshot
 
 ![UI/UX Design](https://raw.githubusercontent.com/Salmizar/availability-calendar/main/UI-datastuctures-requirements/Availability%20Calendar.png)
