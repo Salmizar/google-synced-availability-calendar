@@ -1,5 +1,7 @@
 # Availability-calendar
 
+This is a clone of an existing repo: https://github.com/Salmizar/availability-calendar
+I'm extending it to add the ability to sync the calendar events from a google calendar.
 Some friends run a guiding business and are looking for a simple availability calendar, so I decided to make one for them.
 
 Themes are custom events ocurring during a given period of time. Opening Weekend, for example.
@@ -7,10 +9,6 @@ Themes are custom events ocurring during a given period of time. Opening Weekend
 ## Screenshot
 
 ![UI/UX Design](https://raw.githubusercontent.com/Salmizar/availability-calendar/main/UI-datastuctures-requirements/Availability%20Calendar.png)
-
-## Demo
-
-http://availability-calendar.s3-website.us-east-2.amazonaws.com
 
 ### Deploy to AWS
 ```
