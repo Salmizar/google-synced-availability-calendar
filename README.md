@@ -35,6 +35,11 @@ npm start
 
 ## Usage Instructions
 
+# Environment variables
+
+PORT=3000
+ICAL_URL='https://icaladdress'
+
 #### Implementation example
 
 [index.html](https://github.com/Salmizar/availability-calendar/blob/main/calendar/public/index.html)

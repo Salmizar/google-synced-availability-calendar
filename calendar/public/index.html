@@ -9,7 +9,7 @@
     <script src="cal/calendar.js"></script>
     <script type="module">
         function renderCalendar(theme) {
-            calendar.setupCalendar({ theme: theme, file: 'data.js', id: 'calendar', themeId: 'themes' });
+            calendar.setupSyncedCalendar({ theme: theme, id: 'calendar', themeId: 'themes' });
             calendar.setupLegend({ id: 'legend' });
         }
         renderCalendar(1);

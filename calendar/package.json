@@ -2,7 +2,7 @@
   "name": "calendar",
   "version": "1.0.0",
   "description": "Simple availability Calendar",
-  "main": "fdfvdf.html",
+  "main": "public/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server \"dist\" -o -c-1",
@@ -25,6 +25,7 @@
     "http-server": "^14.1.1",
     "lodash": "^4.17.21",
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "mini-css-extract-plugin": "^2.7.6"
   }
 }
