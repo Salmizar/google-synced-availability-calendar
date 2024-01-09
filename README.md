@@ -1,7 +1,7 @@
 # Availability-calendar
 
 This is a clone of an existing repo: https://github.com/Salmizar/availability-calendar
-I'm extending it to add the ability to sync the calendar events from a google calendar.
+I'm extending it to add the ability to sync the calendar events with an ical, through a node server.
 Some friends run a guiding business and are looking for a simple availability calendar, so I decided to make one for them.
 
 Themes are custom events ocurring during a given period of time. Opening Weekend, for example.
