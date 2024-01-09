@@ -1,9 +1,5 @@
 .DS_Store
-/calendar/dist
 node_modules
-calendar/node_modules
-/build
-/package
 .env
 .env.*
 !.env.example
