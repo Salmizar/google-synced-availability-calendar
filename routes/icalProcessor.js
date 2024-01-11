@@ -25,7 +25,7 @@ const returnGuests = function(value) {
     }
 }
 router.get('/', function (request, response) {
-    if (request.query.totalslots && !isNaN(request.query.totalslots) && request.query.days && !isNaN(request.query.days)) {
+    if (!isNaN(request.query.totalslots) && request.query.categories && !isNaN(request.query.days)) {
         axios.get(process.env.ICAL_URL)
         .then(function (axios_response) {
             //create data object
@@ -48,20 +48,21 @@ router.get('/', function (request, response) {
                 if (cal_data.hasOwnProperty(k)) {
                     var ev = cal_data[k];
                     if (cal_data[k].type == 'VEVENT') {
-                        let startDate = new Date(ev.start);
-                        const  endDate = new Date(ev.end);
-                        const  nights = (endDate.getTime() - startDate.getTime())/one.day;
-                        const guests = returnGuests(ev.description.val);
-                        for (var n=1;n<=nights;n++) {
-                            const dteEntry = startDate.getUTCDate()+'-'+(startDate.getUTCMonth() + 1)+'-'+startDate.getUTCFullYear(); 
-                            data.slots[dteEntry] = ((data.slots[dteEntry])?data.slots[dteEntry]:request.query.totalslots)-guests;
-                            if (data.slots[dteEntry]<0) {
-                                //If the day is overbooked, just return 0
-                                data.slots[dteEntry] = 0;
+                        if (ev.categories[0] === request.query.categories) {
+                            let startDate = new Date(ev.start);
+                            const  endDate = new Date(ev.end);
+                            const  nights = (endDate.getTime() - startDate.getTime())/one.day;
+                            const guests = returnGuests(ev.description.val);
+                            for (var n=1;n<=nights;n++) {
+                                const dteEntry = startDate.getUTCDate()+'-'+(startDate.getUTCMonth() + 1)+'-'+startDate.getUTCFullYear(); 
+                                data.slots[dteEntry] = ((data.slots[dteEntry])?data.slots[dteEntry]:request.query.totalslots)-guests;
+                                if (data.slots[dteEntry]<0) {
+                                    //If the day is overbooked, just return 0
+                                    data.slots[dteEntry] = 0;
+                                }
+                                startDate.setDate(startDate.getDate() + 1);
                             }
-                            startDate.setDate(startDate.getDate() + 1);
                         }
-
                     }
                 }
             }

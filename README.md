@@ -30,6 +30,17 @@ npm start
 
 ## Usage Instructions
 
+totalslots: Required. How many available slots are to be subtraced from.
+days: Required. How many days to generate the data for.
+categories: Required. The categories to filter offerings with.
+
+```
+Examples:
+http://apiAddress/?totalslots=1&days=183&catgeories=Guest%20House
+
+http://apiAddress/?totalslots=16&days=183&catgeories=Lodge%20Room
+```
+
 # Environment variables
 ```
 PORT=3000
