@@ -30,7 +30,6 @@ router.get('/', function (request, response) {
         .then(function (axios_response) {
             //create data object
             var data = {
-                themeDates: themeData.themeDates,
                 slots: {
                 }
             };
